@@ -1,8 +1,8 @@
 name: npm-build工作
 on: push
 
-#permissions:
-#  contents: write
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -19,8 +19,8 @@ jobs:
     - name: 项目打包
       run: npm run build
 
-#    - name: Apply
-#      uses: JamesIves/github-pages-deploy-action@v4
-#      with:
-#        branch: gh-pages
-#        folder: build
+    - name: 部署
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages
+        folder: build
