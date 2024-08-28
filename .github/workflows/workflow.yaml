@@ -13,6 +13,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: 删除npmrc
+      run: rm -f ~/.npmrc
+
     - name: 安装依赖
       run: npm install
 
