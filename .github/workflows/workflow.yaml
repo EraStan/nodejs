@@ -13,12 +13,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: NPM install
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
-    - run: npm ci
-    - run: npm run build
+    - name: 安装依赖
+      run: npm install
+
+    - name: 项目打包
+      run: npm run build
 
 #    - name: Apply
 #      uses: JamesIves/github-pages-deploy-action@v4
