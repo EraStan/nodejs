@@ -1,8 +1,8 @@
-name: Make package
+name: npm-build工作
 on: push
 
-permissions:
-  contents: write
+#permissions:
+#  contents: write
 
 jobs:
   build:
@@ -13,11 +13,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: npm-build
-      run: npm install && npm run build
+    - name: 安装依赖
+      run: npm install
 
-    - name: Apply
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: build
+    - name: 项目打包
+      run: npm run build
+
+#    - name: Apply
+#      uses: JamesIves/github-pages-deploy-action@v4
+#      with:
+#        branch: gh-pages
+#        folder: build
